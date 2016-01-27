@@ -78,8 +78,10 @@ def encrypt(key, message):
     for char in message[1:]:
         if char == prev_char:
             mess += ('q')
-        mess += (char)
-        prev_char = char
+            
+        if char in cipher.alpha:
+            mess += (char)
+            prev_char = char        
             
     if len(mess) % 2 != 0:
         mess += 'q'
