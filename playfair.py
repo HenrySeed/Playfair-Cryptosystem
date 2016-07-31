@@ -75,13 +75,15 @@ def encrypt(key, message):
     prev_char = message[0]
     mess = prev_char
     
+    mess.replace('j', 'i')
+    
     for char in message[1:]:
         if char == prev_char:
             mess += ('q')
             
         if char in cipher.alpha:
             mess += (char)
-            prev_char = char        
+            prev_char = char   
             
     if len(mess) % 2 != 0:
         mess += 'q'
